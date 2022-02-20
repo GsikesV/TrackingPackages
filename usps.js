@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const track = async(tracking_num)=> {
+const track = async(tracking_num) => {
   const usps_tracking_site = 'https://tools.usps.com/go/TrackConfirmAction_input';
   const tracking_search_bar = "#tracking-input";
   const search_track_button = '#trackPackage > div.col-sm-2.track-btn-ctn > button';
@@ -11,7 +11,7 @@ const track = async(tracking_num)=> {
   //const estimated_date = '#st_App_PkgStsTimeDayMonthNum';
   //const package_status = '#stApp_txtPackageStatus';
 
-  const browser = await puppeteer.launch({headless : false});
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   await page.goto(usps_tracking_site);
